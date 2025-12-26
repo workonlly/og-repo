@@ -15,20 +15,20 @@ interface Project {
 const projects: Project[] = [
   {
     id: "PRJ-001",
-    title: "EcoScale Engine",
-    description: "A high-performance backend architecture for managing real-time data synchronization across distributed nodes.",
-    techStack: ["NodeJS", "Redis", "Docker", "PostgreSQL"],
-    link: "#",
-    repo: "#",
+    title: "Codec",
+    description: "A real-time smart website generator leveraging OpenAI APIs for dynamic content creation, Clerk for secure authentication, and a robust token-based access system. Features seamless site deployment and automated user management.",
+    techStack: ["Next.js", "OpenAI API", "Clerk", "NodeJS", "Vercel","inngest","Sandbox"],
+    link: "https://websitegenerator-ten.vercel.app/",
+    repo: "https://github.com/workonlly/llmagent",
     status: "STABLE"
   },
   {
     id: "PRJ-002",
-    title: "Nexus Dashboard",
-    description: "Advanced analytics dashboard featuring modular widgets and real-time biometric data visualization.",
-    techStack: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
-    link: "#",
-    repo: "#",
+    title: "Live Interview",
+    description: "A live interview platform built with Next.js, Firebase, and Google API, enabling real-time scheduling, video calls, and secure candidate management for seamless remote interviews.",
+    techStack: ["Next.js", "Firebase", "Google API"],
+    link: "https://interviewplatform-ochre.vercel.app/",
+    repo: "https://github.com/workonlly/interviewplatform",
     status: "COMPLETED"
   },
   {
@@ -99,7 +99,7 @@ const ProjectCard = ({ project }: { project: Project }) => (
         <Github size={14} /> Source
       </a>
       <a href={project.link} className="flex-1 flex items-center justify-center gap-2 py-2 border-2 border-black bg-black text-white font-black text-[10px] hover:bg-white hover:text-black transition-all uppercase tracking-widest">
-        <ExternalLink size={14} /> Deploy
+        <ExternalLink size={14} /> Visit
       </a>
     </div>
 

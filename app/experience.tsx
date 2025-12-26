@@ -21,39 +21,40 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: "LOG_01",
-    company: "TechNexus Solutions",
-    role: "Senior Full Stack Engineer",
-    period: "2023 - PRESENT",
+    company: "Lacleo AI",
+    role: "Full Stack AI developer",
+    period: "2024- PRESENT",
     description: [
-      "Architected scalable microservices using Next.js and Go for high-traffic fintech applications.",
-      "Optimized database queries in PostgreSQL, reducing latency by 40% across core API endpoints.",
-      "Led a team of 5 developers to deliver a modular UI system based on atomic design principles."
+      "Developing the Lacleo AI platform focused on advanced data enrichment services, driving innovation in data processing and automation.",
+      "Leveraged a diverse technology stack including Next.js for frontend, Laravel as a robust backend, AWS for scalable cloud infrastructure, Elasticsearch for high-performance search, and vector databases for AI-driven features.",
+      "Implemented and managed DevOps operations, optimizing CI/CD pipelines and cloud deployments to ensure reliability and efficiency.",
+      "Enhanced and refactored backend codebase in Laravel, improving performance, maintainability, and scalability across the platform."
     ],
-    tech: ["Next.js", "Go", "PostgreSQL", "AWS"]
+    tech: ["Next.js", "Laravel", "PostgreSQL", "AWS"]
   },
   {
     id: "LOG_02",
-    company: "CyberSystems Inc.",
+    company: "Primerole ",
     role: "Full Stack Developer",
-    period: "2021 - 2023",
+    period: "2024",
     description: [
-      "Developed real-time monitoring dashboards using React and WebSockets for industrial IoT sensors.",
-      "Implemented automated CI/CD pipelines using GitHub Actions and Docker for seamless deployments.",
-      "Refactored legacy codebase to TypeScript, increasing maintainability and reducing runtime errors."
+      "Developed a call enrichment software that analyzes phone recordings to assess call quality, word usage, and customer satisfaction.",
+      "Integrated NLTK (Natural Language Toolkit) to perform sentiment and mood analysis, providing actionable insights for improving sales and customer experience.",
+      "Enhanced backend and frontend systems to support real-time analytics and reporting for customer service teams."
     ],
-    tech: ["React", "NodeJS", "TypeScript", "Docker"]
+    tech: ["python", "fastAPI", "Kubernetes", "Docker", "NLTK"]
   },
   {
     id: "LOG_03",
-    company: "Innovate Labs",
-    role: "Junior Web Architect",
-    period: "2019 - 2021",
+    company: "Lacleo Digital",
+    role: "Junior Web developer",
+    period: "2024",
     description: [
-      "Built responsive landing pages and internal tools using modern CSS frameworks and JavaScript.",
-      "Collaborated with UI/UX designers to transform complex wireframes into functional prototypes.",
-      "Maintained and updated RESTful APIs for client-side integration."
+      "Developed custom software solutions using Flask, Selenium, Playwright, and BeautifulSoup for automation, data extraction, and web scraping tasks.",
+      "Built and deployed fullstack websites with tailored features, integrating backend and frontend technologies to meet client requirements.",
+      "Implemented advanced automation workflows and custom APIs to enhance business operations and user experience."
     ],
-    tech: ["JavaScript", "Express", "MongoDB", "SCSS"]
+    tech: ["Flask", "Selenium", "Playwright", "BeautifulSoup", "JavaScript", "Express", "MongoDB", "SCSS"]
   }
 ];
 

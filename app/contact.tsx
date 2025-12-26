@@ -68,7 +68,7 @@ export const NoirContactSection = () => {
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
              style={{ backgroundImage: 'linear-gradient(black 1px, transparent 1px), linear-gradient(90deg, black 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* --- HEADER --- */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -175,8 +175,8 @@ export const NoirContactSection = () => {
                   <Zap size={14} /> Link_Directives
                 </h3>
                 {[
-                  { label: 'LinkedIn', value: 'in/sujal-engineer' },
-                  { label: 'GitHub', value: 'github/sujal-dev' },
+                  { label: 'EMAIL_1', value: 'singleuse335@gmail.com' },
+                  { label: 'EMAIL_2', value: 'workonlly335@gmail.com' },
                   { label: 'Terminal', value: 'sujal.sh' },
                 ].map((link, i) => (
                   <div key={i} className="flex justify-between items-center group cursor-pointer hover:bg-black hover:text-white p-2 border border-transparent hover:border-black transition-all">

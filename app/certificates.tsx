@@ -7,12 +7,12 @@ interface Certificate {
   issuer: string;
   date: string;
   hash: string; // To add to the Sci-Fi "Data" feel
+  href: string; // Verification link
 }
 
 const certificates: Certificate[] = [
-  { id: "01", title: "Full Stack Web Development", issuer: "Meta", date: "2024-05", hash: "VER_882x_A9" },
-  { id: "02", title: "Advanced AI Architecture", issuer: "DeepLearning.AI", date: "2025-01", hash: "LLM_991z_B2" },
-  { id: "03", title: "Cloud Security Specialist", issuer: "AWS", date: "2024-11", hash: "AWS_772k_C5" },
+  { id: "01", title: "Full Stack AI Developer", issuer: "Lacleo Digital", date: "2024-PRESENT", hash: "VER_882x_A9", href: "https://drive.google.com/file/d/1LJEK3T2APjpj_YFcqDh3IDo6jUKXhByF/view?usp=sharing" },
+  { id: "02", title: "Full Stack Developer", issuer: "Primerole", date: "2024", hash: "LLM_991z_B2", href: "https://drive.google.com/file/d/13Sjg0GUMI7C-ZnbaKwUoovdGxIyJcpY_/view?usp=drive_link" },
 ];
 
 const CredentialEntry = ({ cert }: { cert: Certificate }) => (
@@ -41,7 +41,9 @@ const CredentialEntry = ({ cert }: { cert: Certificate }) => (
       </div>
       
       <a 
-        href="#" 
+        href={cert.href} 
+        target="_blank" 
+        rel="noopener noreferrer"
         className="px-3 py-1 border border-black group-hover:border-white text-[10px] font-black hover:bg-white hover:text-black transition-all"
       >
         VIEW_VERIFICATION
