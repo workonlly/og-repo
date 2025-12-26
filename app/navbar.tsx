@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { 
   SiLinkedin, SiX, SiYoutube, SiGithub, 
   SiFiverr, SiUpwork, SiFreelancer 
@@ -22,9 +23,17 @@ const SocialIcon = ({ Icon, href, label }: { Icon: any; href: string; label: str
 );
 
 const NavItem = ({ label, code }: { label: string; code: string }) => (
-  <a 
-    href={`#${label.toLowerCase()}`} 
-    className="group relative px-4 h-full flex flex-col justify-center border-r border-black hover:bg-black transition-all duration-300"
+  <Link 
+    href={`#${label.toLowerCase()}`}
+    scroll={false}
+    className="group relative px-4 h-full flex flex-col justify-center border-r border-black hover:bg-black transition-all duration-300 cursor-pointer"
+    onClick={e => {
+      e.preventDefault();
+      const el = document.getElementById(label.toLowerCase());
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }}
   >
     <span className="text-[8px] font-black opacity-40 group-hover:text-zinc-500 uppercase tracking-tighter">
       {code}
@@ -34,7 +43,7 @@ const NavItem = ({ label, code }: { label: string; code: string }) => (
     </span>
     {/* Decorative corner on hover */}
     <div className="absolute top-0 right-0 w-0 h-0 border-t-[6px] border-r-[6px] border-transparent group-hover:border-r-white transition-all"></div>
-  </a>
+  </Link>
 );
 
 export default function SciFiNavbar() {
@@ -72,10 +81,11 @@ export default function SciFiNavbar() {
 
       {/* 2. NAVIGATION MODULE */}
       <div className="hidden md:flex flex-1 items-stretch">
-        <NavItem label="INTRO" code="DIR_01" />
-        <NavItem label="EXPERIENCE" code="DIR_02" />
-        <NavItem label="PROJECTS" code="DIR_03" />
-        <NavItem label="CONTACTS" code="DIR_04" />
+        <NavItem label="Intro" code="DIR_01" />
+        <NavItem label="Experience" code="DIR_02" />
+        <NavItem label="Projects" code="DIR_03" />
+        <NavItem label="Certificates" code="DIR_04" />
+        <NavItem label="Contact" code="DIR_05" />
       </div>
 
       {/* 3. SYSTEM STATUS MODULE (Right Side) */}

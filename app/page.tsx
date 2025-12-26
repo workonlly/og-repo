@@ -23,13 +23,17 @@ export default function JarvisPage() {
           
     </div>
     
-     <div className='bg-black rounded-xl p-10 m-10 '>
+     <div id='intro' className='bg-black rounded-xl p-10 m-10 '>
        <Skills />
      </div>
-    <Experience></Experience>
-    <Projects></Projects>
-    <CertificateSection/>
-    <NoirContactSection />
+     <div id='experience'>
+    <Experience></Experience></div>
+    <div id='projects'>
+    <Projects></Projects></div>
+    <div id='certificates'>
+    <CertificateSection/></div>
+    <div id='contact'>
+    <NoirContactSection /></div>
     </>
   );
 }
