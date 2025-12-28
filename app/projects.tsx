@@ -33,12 +33,12 @@ const projects: Project[] = [
   },
   {
     id: "PRJ-003",
-    title: "Quantum Ledger",
-    description: "Decentralized transaction validator built to optimize throughput in high-latency environments.",
-    techStack: ["Go", "gRPC", "Kubernetes", "MongoDB"],
-    link: "#",
-    repo: "#",
-    status: "IN_PROGRESS"
+    title: "Ai stock advisor",
+    description: "AI-powered stock advisor platform providing real-time analytics, predictive insights, and portfolio optimization for smarter investment decisions.",
+    techStack: ["NextJs","typescript", "googleApi", "inngest", "MongoDB"],
+    link: "https://stacko-ten.vercel.app/",
+    repo: "https://github.com/workonlly/Stacko",
+    status: "COMPLETED"
   }
 ];
 
