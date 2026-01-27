@@ -94,12 +94,12 @@ export default function SciFiNavbar() {
       <div className="flex items-stretch ml-auto">
 
         <div className="hidden lg:flex items-stretch border-r-2 border-black">
-        <SocialIcon Icon={SiGithub} href="https://github.com" label="Github" />
-        <SocialIcon Icon={SiLinkedin} href="https://linkedin.com" label="LinkedIn" />
+        <SocialIcon Icon={SiGithub} href="https://github.com/workonlly" label="Github" />
+        <SocialIcon Icon={SiLinkedin} href="https://www.linkedin.com/in/sujal-chandel-688532378/" label="LinkedIn" />
         <SocialIcon Icon={SiX} href="https://twitter.com" label="Twitter" />
         <SocialIcon Icon={SiYoutube} href="https://youtube.com" label="YouTube" />
      
-        <SocialIcon Icon={SiUpwork} href="https://upwork.com" label="Upwork" />
+        <SocialIcon Icon={SiUpwork} href="https://www.upwork.com/freelancers/~012b774fc2e920f0e2?mp_source=share" label="Upwork" />
         <SocialIcon Icon={SiFiverr} href="https://fiverr.com" label="Fiverr" />
         <SocialIcon Icon={SiFreelancer} href="https://freelancer.com" label="Freelancer" />
  </div>
@@ -170,10 +170,10 @@ export default function SciFiNavbar() {
         
         {/* Social Icons in Mobile Menu */}
         <div className="flex items-stretch border-t-2 border-black">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center py-4 border-r border-black hover:bg-black group">
+          <a href="https://github.com/workonlly" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center py-4 border-r border-black hover:bg-black group">
             <SiGithub className="w-5 h-5 text-black group-hover:text-white" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center py-4 border-r border-black hover:bg-black group">
+          <a href="https://www.linkedin.com/in/sujal-chandel-688532378/" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center py-4 border-r border-black hover:bg-black group">
             <SiLinkedin className="w-5 h-5 text-black group-hover:text-white" />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center py-4 border-r border-black hover:bg-black group">
