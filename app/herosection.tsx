@@ -30,8 +30,8 @@ const JarvisEmblem: React.FC<JarvisEmblemProps> = ({
       <div className="absolute inset-[15%] rounded-full flex items-center justify-center">
         {/* Subtle Sphere Edge */}
         <div className="absolute inset-0 rounded-full border border-[var(--j-color)]/20 shadow-[inset_0_0_30px_var(--j-color)] opacity-30" />
-        <div className="rounded-full w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[110px] md:h-[110px] lg:w-[120px] lg:h-[120px] overflow-hidden flex items-center justify-center">
-          <img src="./imh.webp" alt="image" className="object-cover w-full h-full" />
+        <div className="rounded-full w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[180px] md:h-[180px] lg:w-[280px] lg:h-[280px] overflow-hidden flex items-center justify-center">
+          <img src="./gg.jpeg" alt="image" className="object-cover w-full h-full" />
         </div>
       </div>
 

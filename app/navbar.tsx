@@ -104,35 +104,27 @@ export default function SciFiNavbar() {
         <SocialIcon Icon={SiFreelancer} href="https://freelancer.com" label="Freelancer" />
  </div>
         
-        {/* Signal Strength Visualizer */}
-        <div className="hidden lg:flex items-center px-4 gap-1 border-l border-black/10">
-          {[4, 7, 10, 6, 12].map((h, i) => (
-            <div 
-              key={i} 
-              className="w-[2px] bg-black" 
-              style={{ height: `${h}px`, animation: `pulse 1.5s infinite ${i * 0.2}s` }}
-            ></div>
-          ))}
-        </div>
-
-        {/* Time Readout */}
+            {/* Time Readout */}
         <div className="flex flex-col justify-center px-2 sm:px-6 border-l border-black bg-black text-white min-w-[70px] sm:min-w-[120px] shrink-0">
           <span className="text-[7px] sm:text-[8px] font-bold opacity-50 uppercase tracking-tight sm:tracking-widest  sm:block">System_Clock (IST)</span>
           <span className="text-[10px] sm:text-xs font-black tabular-nums">{time}<span className=" sm:inline"> IST</span></span>
         </div>
       </div>
-
-      {/* Mobile Menu Toggle (Simplified for Sci-Fi) */}
-      <div 
-        className="md:hidden flex items-center px-2 border-l border-black shrink-0 cursor-pointer"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      >
-        <div className="space-y-1">
-          <div className={`w-6 h-[2px] bg-black transition-transform duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`}></div>
-          <div className={`w-4 h-[2px] bg-black ml-2 transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></div>
-          <div className={`w-6 h-[2px] bg-black transition-transform duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`}></div>
+        {/* Signal Strength Visualizer / Mobile Menu Toggle */}
+        <div 
+          className="flex items-center px-2 md:px-4 gap-1 border-l border-black shrink-0 md:cursor-default cursor-pointer"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {[4, 7, 10, 6, 12].map((h, i) => (
+            <div 
+              key={i} 
+              className={`w-[2px] bg-black transition-transform duration-300 ${mobileMenuOpen ? 'rotate-45' : ''}`}
+              style={{ height: `${h}px`, animation: `pulse 1.5s infinite ${i * 0.2}s` }}
+            ></div>
+          ))}
         </div>
-      </div>
+
+    
 
       {/* Background Scanning Animation */}
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-black/5 animate-[shimmer_4s_infinite]"></div>
