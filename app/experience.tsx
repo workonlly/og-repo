@@ -59,12 +59,12 @@ const experiences: Experience[] = [
 ];
 
 const ExperienceEntry = ({ exp }: { exp: Experience }) => (
-  <div className="relative pl-8 md:pl-12 group transition-all duration-500">
+  <div className="relative pl-6 md:pl-8 lg:pl-12 group transition-all duration-500">
     {/* --- Timeline Marker --- */}
-    <div className="absolute left-[-9px] top-0 w-4 h-4 bg-white border-2 border-black rounded-full z-10 group-hover:bg-black transition-colors duration-300" />
+    <div className="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-white border-2 border-black rounded-full z-10 group-hover:bg-black transition-colors duration-300" />
     <div className="absolute left-[-1px] top-4 bottom-0 w-[2px] bg-black/20 group-hover:bg-black transition-colors" />
 
-    <div className="border-2 border-black bg-transparent p-6 space-y-4 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all">
+    <div className="border-2 border-black bg-transparent p-3 sm:p-4 md:p-6 space-y-3 sm:space-y-4 hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all">
       
       {/* 1. Header: Role & Period */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b-2 border-black bg-white pb-4">
@@ -72,7 +72,7 @@ const ExperienceEntry = ({ exp }: { exp: Experience }) => (
           <div className="flex items-center gap-2 text-[10px] font-black opacity-40 uppercase tracking-[0.2em] mb-1">
             <Briefcase size={12} /> {exp.company}
           </div>
-          <h3 className="text-2xl font-black uppercase tracking-tighter">{exp.role}</h3>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-black uppercase tracking-tighter">{exp.role}</h3>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 bg-black text-white text-xs font-bold uppercase italic">
           <Calendar size={12} /> {exp.period}
@@ -86,7 +86,7 @@ const ExperienceEntry = ({ exp }: { exp: Experience }) => (
         </div>
         <ul className="space-y-2">
           {exp.description.map((point, i) => (
-            <li key={i} className="flex gap-3 text-sm font-medium leading-relaxed group-hover:translate-x-1 transition-transform">
+            <li key={i} className="flex gap-2 sm:gap-3 text-xs sm:text-sm font-medium leading-relaxed group-hover:translate-x-1 transition-transform">
               <ChevronRight size={16} className="shrink-0 text-black/40 group-hover:text-black" />
               <span>{point}</span>
             </li>
@@ -115,7 +115,7 @@ const ExperienceEntry = ({ exp }: { exp: Experience }) => (
 
 export default function Experience() {
   return (
-    <section className="p-6 md:p-12 space-y-16 bg-transparent">
+    <section className="p-4 sm:p-6 md:p-12 space-y-8 md:space-y-16 bg-transparent">
       
       {/* SECTION TITLE */}
       <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 border-b-8 border-black pb-8">
@@ -123,7 +123,7 @@ export default function Experience() {
           <div className="inline-flex items-center gap-2 text-xs font-black uppercase bg-black text-white px-3 py-1">
             <Cpu size={14} className="animate-pulse" /> Chronology_V5.0
           </div>
-          <h2 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-none">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase italic tracking-tighter leading-none">
             Work<span className="text-zinc-300">_</span>Exp
           </h2>
         </div>

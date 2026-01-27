@@ -63,7 +63,7 @@ export const NoirContactSection = () => {
 
   return (
     <div className=" font-mono text-black selection:bg-black selection:text-white">
-      <section ref={sectionRef} id="contact" className="min-h-screen py-24 px-6 relative overflow-hidden">
+      <section ref={sectionRef} id="contact" className="min-h-screen py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative overflow-hidden">
         {/* Background Grid */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
              style={{ backgroundImage: 'linear-gradient(black 1px, transparent 1px), linear-gradient(90deg, black 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
@@ -79,7 +79,7 @@ export const NoirContactSection = () => {
               <div className="inline-flex items-center gap-2 text-xs font-black bg-black text-white px-3 py-1">
                 <Radio size={14} className="animate-pulse" /> BROADCAST_NODE: 0x01
               </div>
-              <h2 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-none">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase italic tracking-tighter leading-none">
                 Contact<span className="text-zinc-300">_</span>Me
               </h2>
             </div>
@@ -93,9 +93,9 @@ export const NoirContactSection = () => {
             </div>
           </motion.div>
 
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-5 gap-6 md:gap-8 lg:gap-12">
             {/* --- FORM --- */}
-            <motion.div className="lg:col-span-3 border-4 border-black bg-white p-8 shadow-[15px_15px_0px_0px_rgba(0,0,0,1)]">
+            <motion.div className="lg:col-span-3 border-2 sm:border-4 border-black bg-white p-4 sm:p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[15px_15px_0px_0px_rgba(0,0,0,1)]">
               <div className="flex items-center gap-3 mb-10 border-b-2 border-black pb-4">
                 <Terminal size={18} />
                 <span className="text-xs font-black tracking-widest uppercase">Input_Stream_Sequence</span>
@@ -142,7 +142,7 @@ export const NoirContactSection = () => {
                 <button
                   type="submit"
                   disabled={isTransmitting}
-                  className="w-full border-4 border-black p-4 font-black text-xl flex items-center justify-center gap-4 hover:bg-black hover:text-white transition-all disabled:opacity-30 group"
+                  className="w-full border-2 sm:border-4 border-black p-3 sm:p-4 font-black text-base sm:text-lg md:text-xl flex items-center justify-center gap-3 sm:gap-4 hover:bg-black hover:text-white transition-all disabled:opacity-30 group"
                 >
                   {isTransmitting ? 'UPLOADING...' : 'INITIATE_BROADCAST'}
                   <Send size={20} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
@@ -152,7 +152,7 @@ export const NoirContactSection = () => {
 
             {/* --- SIDEBAR --- */}
             <div className="lg:col-span-2 space-y-8">
-              <div className="border-4 border-black p-6 bg-white shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)]">
+              <div className="border-2 sm:border-4 border-black p-4 sm:p-6 bg-white shadow-[5px_5px_0px_0px_rgba(0,0,0,0.1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,0.1)]">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
                     <Wifi size={16} className={signalStatus !== 'IDLE' ? 'animate-pulse' : ''} />
@@ -201,7 +201,7 @@ export const NoirContactSection = () => {
       {/* --- SYSTEM FOOTER --- */}
       <footer className="border-t-8 border-black pt-12 pb-6 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mb-8 md:mb-12">
             
             {/* Branding Column */}
             <div className="md:col-span-2 space-y-4">

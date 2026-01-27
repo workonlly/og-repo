@@ -21,10 +21,8 @@ const JarvisEmblem: React.FC<JarvisEmblemProps> = ({
 
   return (
     <div 
-      className="relative flex  select-none"
+      className="relative flex select-none w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px]"
       style={{ 
-        width: size, 
-        height: size, 
         '--j-color': color,
       } as React.CSSProperties}
     >
@@ -32,8 +30,8 @@ const JarvisEmblem: React.FC<JarvisEmblemProps> = ({
       <div className="absolute inset-[15%] rounded-full flex items-center justify-center">
         {/* Subtle Sphere Edge */}
         <div className="absolute inset-0 rounded-full border border-[var(--j-color)]/20 shadow-[inset_0_0_30px_var(--j-color)] opacity-30" />
-        <div className="rounded-full w-[120px] h-[120px] overflow-hidden flex items-center justify-center">
-          <img src="./imh.webp" alt="image" width={120} height={120} className="object-cover w-full h-full" />
+        <div className="rounded-full w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[110px] md:h-[110px] lg:w-[120px] lg:h-[120px] overflow-hidden flex items-center justify-center">
+          <img src="./imh.webp" alt="image" className="object-cover w-full h-full" />
         </div>
       </div>
 

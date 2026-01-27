@@ -18,7 +18,7 @@ const SciFiContainer = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <div className="relative w-full h-full min-h-[500px] bg-transparent border-l-2 border-r-2 border-black flex overflow-hidden font-mono group">
+    <div className="relative w-full h-full min-h-[400px] md:min-h-[500px] bg-transparent border-l-0 md:border-l-2 border-r-0 md:border-r-2 border-black flex overflow-hidden font-mono group">
       
       {/* --- 1. THE GRID (Ultra-faint Black lines) --- */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none animate-[pan_40s_linear_infinite]"
@@ -72,17 +72,17 @@ const SciFiContainer = ({ children }: { children: React.ReactNode }) => {
         </div>
 
         {/* --- 4. MAIN CONTENT AREA (About Me) --- */}
-        <div className="relative flex-1 p-10 overflow-hidden">
+        <div className="relative flex-1 p-4 sm:p-6 md:p-10 overflow-hidden">
            
            {/* Geometric Watermark */}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none opacity-[0.03]">
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] pointer-events-none opacity-[0.03]">
               <div className="absolute inset-0 border-2 border-black rounded-full animate-[spin_30s_linear_infinite]"></div>
               <div className="absolute inset-20 border border-black animate-[spin_20s_linear_infinite_reverse] border-dashed"></div>
            </div>
 
            {/* Corner Accents */}
-           <div className="absolute top-6 right-6 w-8 h-8 border-t-4 border-r-4 border-black"></div>
-           <div className="absolute bottom-6 left-6 w-8 h-8 border-b-4 border-l-4 border-black"></div>
+           <div className="absolute top-2 right-2 md:top-6 md:right-6 w-6 h-6 md:w-8 md:h-8 border-t-2 border-r-2 md:border-t-4 md:border-r-4 border-black"></div>
+           <div className="absolute bottom-2 left-2 md:bottom-6 md:left-6 w-6 h-6 md:w-8 md:h-8 border-b-2 border-l-2 md:border-b-4 md:border-l-4 border-black"></div>
 
            <div className="relative z-20 text-black h-full flex flex-col justify-center">
               {children}

@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 // --- 1. JARVIS EMBLEM COMPONENT (NOIR VERSION) ---
 const JarvisEmblem = ({ size = 300 }) => {
   return (
-    <div className="relative flex items-center justify-center animate-[spin_60s_linear_infinite]" style={{ width: size, height: size }}>
+    <div className="relative flex items-center justify-center animate-[spin_60s_linear_infinite] w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px]">
       <svg className="w-full h-full" viewBox="0 0 100 100">
         <circle cx="50" cy="50" r="48" fill="none" stroke="black" strokeWidth="0.1" opacity="0.2" />
         <circle cx="50" cy="50" r="42" fill="none" stroke="black" strokeWidth="0.5" strokeDasharray="1 2 10 5" opacity="0.6" />
@@ -48,10 +48,10 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto border-4 border-black relative overflow-hidden">
         
         {/* Top Navigation Bar */}
-        <div className="border-b-4 border-black h-16 flex items-center justify-between px-6 bg-white z-20 sticky top-0">
+        <div className="border-b-4 border-black h-14 md:h-16 flex items-center justify-between px-3 sm:px-6 bg-white z-20 sticky top-0">
           <div className="flex items-center gap-4">
             <div className="w-8 h-8 bg-black flex items-center justify-center text-white font-black italic">S</div>
-            <h1 className="text-xl font-black uppercase tracking-tighter italic">Sujal_Architect_v5.0</h1>
+            <h1 className="text-sm sm:text-lg md:text-xl font-black uppercase tracking-tighter italic">Sujal_Architect_v5.0</h1>
           </div>
           <div className="hidden md:flex gap-8 text-[10px] font-bold opacity-60">
             <div>LOC: 28.6139° N, 77.2090° E</div>
@@ -61,12 +61,12 @@ export default function Skills() {
 
         {/* HERO / INTRO & SKILLS SECTION - Full Width */}
         <div className="bg-zinc-50/50 border-b-4 border-black">
-          <div className="p-10 flex flex-col justify-center space-y-6 relative">
+          <div className="p-4 sm:p-6 md:p-10 flex flex-col justify-center space-y-4 sm:space-y-6 relative">
             <div className="absolute top-4 left-4 text-[9px] font-bold opacity-30 tracking-[0.4em]">PROFILE_INIT</div>
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-none">
-              Sujal <span className="text-zinc-400">|</span> <span className="text-2xl align-middle text-gap- font-mono">Full Stack Developer</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter leading-none">
+              Sujal <span className="text-zinc-400">|</span> <span className="text-lg sm:text-xl md:text-2xl align-middle text-gap- font-mono">Full Stack Developer</span>
             </h2>
-            <p className="text-lg font-bold text-zinc-600">Building scalable, high-performance web solutions with a focus on clean code, modern UI, and robust backend logic.</p>
+            <p className="text-sm sm:text-base md:text-lg font-bold text-zinc-600">Building scalable, high-performance web solutions with a focus on clean code, modern UI, and robust backend logic.</p>
             <div className="space-y-2">
               <div className="text-base font-black uppercase tracking-widest text-black">What I Do</div>
               <ul className="list-disc list-inside text-zinc-700 text-base font-medium space-y-1">
@@ -79,7 +79,7 @@ export default function Skills() {
             </div>
             <div className="space-y-1 pt-4">
               <div className="text-base font-black uppercase tracking-widest text-black">Tech Stack</div>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs sm:text-sm">
                 <div>
                   <span className="font-bold">Languages:</span> Solidity, C++, C, Java, Python, Rust, Go, JavaScript, TypeScript
                 </div>
@@ -107,22 +107,22 @@ export default function Skills() {
         </div>
 
         {/* SKILLS SECTION (From Image 3) */}
-        <div className="p-10 space-y-8 bg-white">
+        <div className="p-4 sm:p-6 md:p-10 space-y-6 md:space-y-8 bg-white">
           <div className="space-y-2">
-            <h3 className="text-4xl font-black uppercase italic tracking-tighter">Skills & Tools</h3>
-            <p className="text-xl font-bold text-zinc-400 italic">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase italic tracking-tighter">Skills & Tools</h3>
+            <p className="text-base sm:text-lg md:text-xl font-bold text-zinc-400 italic">
               Learned by coding all night and debugging all day!
             </p>
           </div>
 
-          <p className="max-w-3xl text-lg font-medium">
+          <p className="max-w-3xl text-sm sm:text-base md:text-lg font-medium">
             As a full-stack Software Engineer, I specialize in building scalable web applications using 
             modern technologies such as <span className="font-black">Next.js, React, and Tailwind CSS</span>. 
             I'm also expanding my expertise into DevOps and cloud practices to create efficient solutions.
           </p>
 
           {/* Pill Grid */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
                         <SkillPill name="Solidity" />
                         <SkillPill name="C++" />
                         <SkillPill name="C" />

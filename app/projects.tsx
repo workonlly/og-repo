@@ -75,11 +75,11 @@ const ProjectCard = ({ project }: { project: Project }) => (
     </div>
 
     {/* 3. Content Section */}
-    <div className="p-6 space-y-4 flex-grow flex flex-col">
-      <h3 className="text-2xl font-black uppercase italic tracking-tighter group-hover:translate-x-2 transition-transform duration-300">
+    <div className="p-3 sm:p-4 md:p-6 space-y-3 sm:space-y-4 flex-grow flex flex-col">
+      <h3 className="text-xl sm:text-2xl font-black uppercase italic tracking-tighter group-hover:translate-x-2 transition-transform duration-300">
         {project.title}
       </h3>
-      <p className="text-sm font-medium leading-relaxed text-zinc-600 group-hover:text-black transition-colors">
+      <p className="text-xs sm:text-sm font-medium leading-relaxed text-zinc-600 group-hover:text-black transition-colors">
         {project.description}
       </p>
 
@@ -108,7 +108,7 @@ const ProjectCard = ({ project }: { project: Project }) => (
 
 export default function Projects() {
   return (
-    <section className="p-6 md:p-12 space-y-12">
+    <section className="p-4 sm:p-6 md:p-12 space-y-8 md:space-y-12">
       
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-8 border-black pb-8">
@@ -116,7 +116,7 @@ export default function Projects() {
           <div className="inline-flex items-center gap-2 text-xs font-black uppercase bg-black text-white px-3 py-1">
             <Cpu size={14} /> Executed_Deployments
           </div>
-          <h2 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-none">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase italic tracking-tighter leading-none">
             Project<span className="text-zinc-300">_</span>Logs
           </h2>
         </div>
@@ -128,7 +128,7 @@ export default function Projects() {
       </div>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
         {projects.map((proj) => (
           <ProjectCard key={proj.id} project={proj} />
         ))}

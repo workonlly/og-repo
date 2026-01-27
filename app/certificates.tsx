@@ -16,13 +16,13 @@ const certificates: Certificate[] = [
 ];
 
 const CredentialEntry = ({ cert }: { cert: Certificate }) => (
-  <div className="group relative border-b border-black/10 hover:bg-black hover:text-white transition-all duration-300 p-4 flex flex-col md:flex-row md:items-center gap-4 cursor-crosshair">
+  <div className="group relative border-b border-black/10 hover:bg-black hover:text-white transition-all duration-300 p-3 sm:p-4 flex flex-col md:flex-row md:items-center gap-3 sm:gap-4 cursor-crosshair">
     {/* Left ID Branding */}
     <div className="flex items-center gap-4 md:w-1/4">
       <span className="text-[10px] font-black opacity-30 group-hover:text-zinc-500">[{cert.id}]</span>
       <div className="flex flex-col">
         <span className="text-[10px] font-bold opacity-50 uppercase tracking-widest">{cert.issuer}</span>
-        <h3 className="text-sm font-black uppercase tracking-tighter">{cert.title}</h3>
+        <h3 className="text-xs sm:text-sm font-black uppercase tracking-tighter">{cert.title}</h3>
       </div>
     </div>
 
@@ -57,7 +57,7 @@ const CredentialEntry = ({ cert }: { cert: Certificate }) => (
 
 export default function CertificateSection() {
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6">
       <section className="w-full max-w-7xl font-mono">
       {/* Section Header */}
       <div className="w-full relative z-10">
@@ -66,10 +66,10 @@ export default function CertificateSection() {
             <div className="inline-flex items-center gap-2 text-xs font-black bg-black text-white px-3 py-1">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse inline-block"></span> VAULT_NODE: 0x04
             </div>
-            <h2 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-none">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase italic tracking-tighter leading-none">
               Credential<span className="text-zinc-300">_</span>Vault
             </h2>
-            <span className="text-lg font-bold opacity-40 tracking-[0.3em] uppercase">Auth_Level: Level_04_Encrypted</span>
+            <span className="text-sm sm:text-base md:text-lg font-bold opacity-40 tracking-[0.2em] sm:tracking-[0.3em] uppercase">Auth_Level: Level_04_Encrypted</span>
           </div>
           <div className="flex flex-col items-end gap-1">
             <div className="flex items-center gap-2 text-[10px] font-black opacity-40">
