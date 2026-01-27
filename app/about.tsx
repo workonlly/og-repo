@@ -153,9 +153,11 @@ export default function About() {
 
             {/* Decorative Link/Command */}
             <div className="flex items-center gap-2 pt-2">
+              <a href="https://drive.google.com/file/d/1VmFBqs2GCbrIow2cJ3mG7lNypSwCL9-G/view?usp=sharing" target='_blank'>
                <div className="px-2 py-1 border border-black font-black text-xs hover:bg-black hover:text-white cursor-pointer transition-colors">
                  DOWNLOAD_CV.PDF
                </div>
+               </a>
                <div className="text-[10px] font-bold opacity-40 animate-pulse">
                  RUNNING: portfolio_v3.sh
                </div>

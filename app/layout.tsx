@@ -29,18 +29,22 @@ export default function RootLayout({
     <html lang="en" className="max-w-full overflow-x-hidden">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-full overflow-x-hidden`}
-        style={{ position: 'relative' }}
       >
         {/* Background layers */}
-        <Starfield />
-        <DataRain />
+        <div className="fixed inset-0 z-0">
+          <Starfield />
+          <DataRain />
+        </div>
         {/* Main content */}
-        <div className="sticky top-0 z-50 w-full max-w-full">
-          <SciFiNavbar />
+        <div className="relative z-10">
+          <div className="fixed top-0 left-0 right-0 z-50 w-full max-w-full bg-white">
+            <SciFiNavbar  />
+          </div>
+          <div className="w-full max-w-full pt-14">
+            {children}
+          </div>
         </div>
-        <div className="w-full max-w-full" style={{ position: 'relative', zIndex: 10 }}>
-          {children}
-        </div>
+        
       </body>
     </html>
   );

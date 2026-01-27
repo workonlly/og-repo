@@ -13,6 +13,10 @@ interface Certificate {
 const certificates: Certificate[] = [
   { id: "01", title: "Full Stack AI Developer", issuer: "Lacleo Digital", date: "2024-PRESENT", hash: "VER_882x_A9", href: "https://drive.google.com/file/d/1LJEK3T2APjpj_YFcqDh3IDo6jUKXhByF/view?usp=sharing" },
   { id: "02", title: "Full Stack Developer", issuer: "Primerole", date: "2024", hash: "LLM_991z_B2", href: "https://drive.google.com/file/d/13Sjg0GUMI7C-ZnbaKwUoovdGxIyJcpY_/view?usp=drive_link" },
+  { id: "03", title: "Open SSF Scorecard", issuer: "OLFX", date: "2025", hash: "LLM_991z_B2", href: "https://drive.google.com/file/d/1SLINWzKxAMQeL13KLmTGmI6FKGxgsJYw/view?usp=sharing" },
+  { id: "04", title: "AI/ML software Developer", issuer: "OLFX", date: "2025", hash: "LLM_991z_B2", href: "https://drive.google.com/file/d/16rOp_qoRHnJcLJBFAEJiy36AVtcnxYCb/view?usp=sharing" },
+  { id: "05", title: "Open Source Developer", issuer: "OLFX", date: "2025", hash: "LLM_991z_B2", href: "https://drive.google.com/file/d/1FnQzimwNGxtMOJhetXAU_kK7JDN-Q2Lc/view?usp=sharing" },
+
 ];
 
 const CredentialEntry = ({ cert }: { cert: Certificate }) => (

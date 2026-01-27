@@ -10,7 +10,7 @@ export default function JarvisPage() {
 
     <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20 min-h-screen bg-transparent overflow-hidden relative px-4 py-8 lg:py-0 max-w-full">
       
-      <div className="z-10 bg-white">
+      <div className="z-10 ">
         <JarvisEmblem 
           size={300} 
           color="#000000" 
