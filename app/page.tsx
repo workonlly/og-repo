@@ -8,12 +8,12 @@ import CertificateSection from './certificates';
 export default function JarvisPage() {
   return (<>
 
-    <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20 min-h-screen bg-transparent overflow-hidden relative px-4 py-8 lg:py-0">
+    <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20 min-h-screen bg-transparent overflow-hidden relative px-4 py-8 lg:py-0 max-w-full">
       
       <div className="z-10 bg-white">
         <JarvisEmblem 
           size={300} 
-          color="#000000" // Set the emblem color to Black
+          color="#000000" 
         />
       </div>
 
@@ -23,7 +23,7 @@ export default function JarvisPage() {
           
     </div>
     
-     <div id='intro' className='bg-black rounded-xl p-4 sm:p-6 md:p-10 m-4 sm:m-6 md:m-10'>
+     <div id='intro' className='bg-black rounded-xl p-2 sm:p-0 md:p-10 m-2 sm:m-0 md:m-10 max-w-full'>
        <Skills />
      </div>
      <div id='experience'>

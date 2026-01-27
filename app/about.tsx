@@ -54,7 +54,7 @@ const SciFiContainer = ({ children }: { children: React.ReactNode }) => {
       <div className="flex-1 relative flex flex-col z-10">
         
         {/* --- 3. TOP NAVIGATION (High Contrast) --- */}
-        <div className="h-16 border-b-2 border-black flex items-center justify-between px-8 relative">
+        <div className="h-16 border-b-2 border-black flex items-center justify-between px-3 md:px-8 relative">
            <h2 className="text-2xl font-black text-black tracking-tighter uppercase italic">
              <span className="opacity-30">///</span> PROFILE_READOUT
            </h2>
@@ -72,7 +72,7 @@ const SciFiContainer = ({ children }: { children: React.ReactNode }) => {
         </div>
 
         {/* --- 4. MAIN CONTENT AREA (About Me) --- */}
-        <div className="relative flex-1 p-4 sm:p-6 md:p-10 overflow-hidden">
+        <div className="relative flex-1 p-3 md:p-10 overflow-hidden">
            
            {/* Geometric Watermark */}
            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] pointer-events-none opacity-[0.03]">
@@ -90,7 +90,7 @@ const SciFiContainer = ({ children }: { children: React.ReactNode }) => {
         </div>
 
         {/* --- 5. BOTTOM DATA BAR --- */}
-        <div className="h-10 border-t-2 border-black flex items-center px-6 gap-4 relative overflow-hidden">
+        <div className="h-10 border-t-2 border-black flex items-center px-2 md:px-6 gap-2 md:gap-4 relative overflow-hidden">
            <div className="h-3 w-3 bg-black animate-spin z-10"></div>
            <div className="text-[10px] font-black text-black z-10 tracking-[0.3em]">
              LOC_ID: <span className="opacity-50">NODE_REMOTE_01</span>
@@ -124,9 +124,9 @@ const SciFiContainer = ({ children }: { children: React.ReactNode }) => {
 
 export default function About() {
   return (
-    <div className="min-h-screen w-full text-black p-6 md:p-12 flex flex-col items-center font-mono">
+    <div className="min-h-screen w-full text-black p-0 md:p-12 flex flex-col items-center font-mono">
       
-      <div className="w-full max-w-3xl flex flex-col gap-6 z-10">
+      <div className="w-full max-w-3xl flex flex-col gap-0 md:gap-6 z-10">
         
         <SciFiContainer>
           <div className="max-w-xl space-y-2 bg-white">
@@ -135,7 +135,7 @@ export default function About() {
               <div className="inline-block px-1 py-0.5 bg-black text-white text-[9px] font-bold tracking-tighter mb-2">
                 INITIATING_BIOGRAPHY_SEQUENCE
               </div>
-              <h1 className="text-3xl md:text-5xl font-black tracking-tighter leading-tight">
+              <h1 className="text-xl md:text-5xl font-black tracking-tighter leading-tight">
                 SUJAL<span className="text-zinc-300">_</span>
               </h1>
               <h2 className="text-base md:text-lg font-bold uppercase tracking-[0.15em] border-b-2 border-black inline-block pb-1">

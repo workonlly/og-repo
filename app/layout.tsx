@@ -26,19 +26,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="max-w-full overflow-x-hidden">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ position: 'relative', minHeight: '100vh', overflow: 'auto' }}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-full overflow-x-hidden`}
+        style={{ position: 'relative' }}
       >
         {/* Background layers */}
         <Starfield />
         <DataRain />
         {/* Main content */}
-        <div className="sticky top-0 z-50">
+        <div className="sticky top-0 z-50 w-full max-w-full">
           <SciFiNavbar />
         </div>
-        <div style={{ position: 'relative', zIndex: 10 }}>
+        <div className="w-full max-w-full" style={{ position: 'relative', zIndex: 10 }}>
           {children}
         </div>
       </body>

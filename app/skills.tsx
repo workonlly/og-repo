@@ -2,24 +2,6 @@
 import React, { useState, useEffect } from 'react';
 
 
-// --- 1. JARVIS EMBLEM COMPONENT (NOIR VERSION) ---
-const JarvisEmblem = ({ size = 300 }) => {
-  return (
-    <div className="relative flex items-center justify-center animate-[spin_60s_linear_infinite] w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px]">
-      <svg className="w-full h-full" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="48" fill="none" stroke="black" strokeWidth="0.1" opacity="0.2" />
-        <circle cx="50" cy="50" r="42" fill="none" stroke="black" strokeWidth="0.5" strokeDasharray="1 2 10 5" opacity="0.6" />
-        <circle cx="50" cy="50" r="38" fill="none" stroke="black" strokeWidth="1" strokeDasharray="20 15" opacity="0.4" />
-        <circle cx="50" cy="50" r="30" fill="none" stroke="black" strokeWidth="0.2" strokeDasharray="2 2" />
-      </svg>
-      {/* Central Identity Marker */}
-      <div className="absolute inset-0 flex items-center justify-center animate-[spin_10s_linear_infinite_reverse]">
-        <div className="w-4 h-4 border-2 border-black rotate-45"></div>
-      </div>
-    </div>
-  );
-};
-
 // --- 2. SKILL PILL COMPONENT ---
 const SkillPill = ({ name }: { name: string }) => (
   <div className="flex items-center gap-2 px-4 py-2 border-2 border-black bg-white hover:bg-black hover:text-white transition-all duration-300 group cursor-default">
@@ -42,16 +24,16 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-white text-black font-mono p-4 md:p-12 selection:bg-black selection:text-white">
+    <div className="min-h-screen w-full bg-white text-black font-mono p-0 md:p-12 selection:bg-black selection:text-white">
       
       {/* --- MAIN PAGE BORDER & LAYOUT --- */}
-      <div className="max-w-6xl mx-auto border-4 border-black relative overflow-hidden">
+      <div className="max-w-6xl mx-auto border-0 md:border-4  border-black relative overflow-hidden">
         
         {/* Top Navigation Bar */}
-        <div className="border-b-4 border-black h-14 md:h-16 flex items-center justify-between px-3 sm:px-6 bg-white z-20 sticky top-0">
-          <div className="flex items-center gap-4">
-            <div className="w-8 h-8 bg-black flex items-center justify-center text-white font-black italic">S</div>
-            <h1 className="text-sm sm:text-lg md:text-xl font-black uppercase tracking-tighter italic">Sujal_Architect_v5.0</h1>
+        <div className="border-b-4 border-black h-12 md:h-16 flex items-center justify-between px-2 md:px-6 bg-white z-20 sticky top-0">
+          <div className="flex items-center gap-2 md:gap-4">
+            <div className="w-6 h-6 md:w-8 md:h-8 bg-black flex items-center justify-center text-white font-black italic text-sm md:text-base">S</div>
+            <h1 className="text-xs md:text-xl font-black uppercase tracking-tighter italic">Sujal_Architect_v5.0</h1>
           </div>
           <div className="hidden md:flex gap-8 text-[10px] font-bold opacity-60">
             <div>LOC: 28.6139° N, 77.2090° E</div>
@@ -61,15 +43,15 @@ export default function Skills() {
 
         {/* HERO / INTRO & SKILLS SECTION - Full Width */}
         <div className="bg-zinc-50/50 border-b-4 border-black">
-          <div className="p-4 sm:p-6 md:p-10 flex flex-col justify-center space-y-4 sm:space-y-6 relative">
-            <div className="absolute top-4 left-4 text-[9px] font-bold opacity-30 tracking-[0.4em]">PROFILE_INIT</div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter leading-none">
-              Sujal <span className="text-zinc-400">|</span> <span className="text-lg sm:text-xl md:text-2xl align-middle text-gap- font-mono">Full Stack Developer</span>
+          <div className="p-3 md:p-10 flex flex-col justify-center space-y-3 md:space-y-6 relative">
+            <div className=" top-4 left-4 text-[9px] font-bold opacity-30 tracking-[0.4em]">PROFILE_INIT</div>
+            <h2 className="text-2xl md:text-7xl font-black tracking-tighter leading-none">
+              Sujal <span className="text-zinc-400">|</span> <span className="text-sm md:text-2xl align-middle text-gap- font-mono">Full Stack Developer</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg font-bold text-zinc-600">Building scalable, high-performance web solutions with a focus on clean code, modern UI, and robust backend logic.</p>
+            <p className="text-xs md:text-lg font-bold text-zinc-600">Building scalable, high-performance web solutions with a focus on clean code, modern UI, and robust backend logic.</p>
             <div className="space-y-2">
-              <div className="text-base font-black uppercase tracking-widest text-black">What I Do</div>
-              <ul className="list-disc list-inside text-zinc-700 text-base font-medium space-y-1">
+              <div className="text-sm md:text-base font-black uppercase tracking-widest text-black">What I Do</div>
+              <ul className="list-disc list-inside text-zinc-700 text-xs md:text-base font-medium space-y-1">
                 <li>Architect and develop full-stack web applications</li>
                 <li>Design modern, responsive UIs with React & Tailwind CSS</li>
                 <li>Build scalable APIs and backend systems (Node.js, Express, PostgreSQL, MongoDB)</li>
@@ -78,8 +60,8 @@ export default function Skills() {
               </ul>
             </div>
             <div className="space-y-1 pt-4">
-              <div className="text-base font-black uppercase tracking-widest text-black">Tech Stack</div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs sm:text-sm">
+              <div className="text-sm md:text-base font-black uppercase tracking-widest text-black">Tech Stack</div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs md:text-sm">
                 <div>
                   <span className="font-bold">Languages:</span> Solidity, C++, C, Java, Python, Rust, Go, JavaScript, TypeScript
                 </div>
@@ -107,22 +89,22 @@ export default function Skills() {
         </div>
 
         {/* SKILLS SECTION (From Image 3) */}
-        <div className="p-4 sm:p-6 md:p-10 space-y-6 md:space-y-8 bg-white">
+        <div className="p-3 md:p-10 space-y-4 md:space-y-8 bg-white">
           <div className="space-y-2">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase italic tracking-tighter">Skills & Tools</h3>
-            <p className="text-base sm:text-lg md:text-xl font-bold text-zinc-400 italic">
+            <h3 className="text-xl md:text-4xl font-black uppercase italic tracking-tighter">Skills & Tools</h3>
+            <p className="text-sm md:text-xl font-bold text-zinc-400 italic">
               Learned by coding all night and debugging all day!
             </p>
           </div>
 
-          <p className="max-w-3xl text-sm sm:text-base md:text-lg font-medium">
+          <p className="max-w-3xl text-xs md:text-lg font-medium">
             As a full-stack Software Engineer, I specialize in building scalable web applications using 
             modern technologies such as <span className="font-black">Next.js, React, and Tailwind CSS</span>. 
             I'm also expanding my expertise into DevOps and cloud practices to create efficient solutions.
           </p>
 
           {/* Pill Grid */}
-          <div className="flex flex-wrap gap-2 sm:gap-3">
+          <div className="flex flex-wrap gap-1.5 md:gap-3">
                         <SkillPill name="Solidity" />
                         <SkillPill name="C++" />
                         <SkillPill name="C" />
@@ -169,7 +151,7 @@ export default function Skills() {
         </div>
 
         {/* Footer Technical Info */}
-        <div className="border-t-4 border-black h-12 flex items-center px-6 justify-between text-[10px] font-black bg-black text-white">
+        <div className="border-t-4 border-black h-10 md:h-12 flex items-center px-2 md:px-6 justify-between text-[8px] md:text-[10px] font-black bg-black text-white">
           <div className="animate-pulse">/// SYSTEM_STATE: NOMINAL</div>
           <div className="tracking-[0.5em]">2025_CORE_ARCHIVE</div>
         </div>

@@ -48,6 +48,7 @@ const NavItem = ({ label, code }: { label: string; code: string }) => (
 
 export default function SciFiNavbar() {
   const [time, setTime] = useState("");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -64,16 +65,17 @@ export default function SciFiNavbar() {
   }, []);
 
   return (
-    <nav className="w-full h-14 bg-white border-b-2 border-black flex items-stretch font-mono relative z-[100] overflow-hidden">
+    <>
+    <nav className="w-full h-14 bg-white border-b-2 border-black flex items-stretch font-mono relative z-[100] overflow-hidden box-border">
       
       {/* 1. BRAND MODULE */}
-      <div className="flex items-center px-6 border-r-4 border-black bg-zinc-50">
+      <div className="flex items-center px-2 sm:px-6 border-r-4 border-black bg-zinc-50 shrink-0">
         <div className="flex flex-col">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-black animate-pulse"></div>
-            <span className="text-lg font-black tracking-tighter italic">SUB_SYSTEM_vS</span>
+          <div className="flex items-center gap-1 sm:gap-2">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-black animate-pulse"></div>
+            <span className="text-sm sm:text-lg font-black tracking-tighter italic">SUB_SYSTEM_vS</span>
           </div>
-          <span className="text-[7px] font-bold tracking-[0.4em] opacity-50 -mt-1 uppercase">
+          <span className="text-[6px] sm:text-[7px] font-bold tracking-[0.2em] sm:tracking-[0.4em] opacity-50 -mt-1 uppercase hidden sm:block">
             Neural_Interface
           </span>
         </div>
@@ -114,23 +116,83 @@ export default function SciFiNavbar() {
         </div>
 
         {/* Time Readout */}
-        <div className="flex flex-col justify-center px-6 border-l border-black bg-black text-white min-w-[120px]">
-          <span className="text-[8px] font-bold opacity-50 uppercase tracking-widest">System_Clock (IST)</span>
-          <span className="text-xs font-black tabular-nums">{time} IST</span>
+        <div className="flex flex-col justify-center px-2 sm:px-6 border-l border-black bg-black text-white min-w-[70px] sm:min-w-[120px] shrink-0">
+          <span className="text-[7px] sm:text-[8px] font-bold opacity-50 uppercase tracking-tight sm:tracking-widest  sm:block">System_Clock (IST)</span>
+          <span className="text-[10px] sm:text-xs font-black tabular-nums">{time}<span className=" sm:inline"> IST</span></span>
         </div>
       </div>
 
       {/* Mobile Menu Toggle (Simplified for Sci-Fi) */}
-      <div className="md:hidden flex items-center px-4 border-l border-black">
+      <div 
+        className="md:hidden flex items-center px-2 border-l border-black shrink-0 cursor-pointer"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
         <div className="space-y-1">
-          <div className="w-6 h-[2px] bg-black"></div>
-          <div className="w-4 h-[2px] bg-black ml-2"></div>
-          <div className="w-6 h-[2px] bg-black"></div>
+          <div className={`w-6 h-[2px] bg-black transition-transform duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`}></div>
+          <div className={`w-4 h-[2px] bg-black ml-2 transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></div>
+          <div className={`w-6 h-[2px] bg-black transition-transform duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`}></div>
         </div>
       </div>
 
       {/* Background Scanning Animation */}
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-black/5 animate-[shimmer_4s_infinite]"></div>
     </nav>
+
+    {/* Mobile Menu Dropdown */}
+    <div className={`md:hidden fixed top-14 left-0 w-full bg-white border-b-2 border-black font-mono transition-all duration-300 z-[99] ${mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+      <div className="flex flex-col">
+        {[
+          { label: "Intro", code: "DIR_01" },
+          { label: "Experience", code: "DIR_02" },
+          { label: "Projects", code: "DIR_03" },
+          { label: "Certificates", code: "DIR_04" },
+          { label: "Contact", code: "DIR_05" }
+        ].map((item, index) => (
+          <Link
+            key={index}
+            href={`#${item.label.toLowerCase()}`}
+            scroll={false}
+            className="group px-4 py-4 border-b border-black hover:bg-black transition-all duration-200 cursor-pointer"
+            onClick={e => {
+              e.preventDefault();
+              const el = document.getElementById(item.label.toLowerCase());
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+                setMobileMenuOpen(false);
+              }
+            }}
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="text-[8px] font-black opacity-40 group-hover:text-zinc-500 uppercase tracking-tighter block">
+                  {item.code}
+                </span>
+                <span className="text-sm font-black tracking-widest group-hover:text-white uppercase">
+                  {item.label}
+                </span>
+              </div>
+              <div className="w-2 h-2 bg-black group-hover:bg-white"></div>
+            </div>
+          </Link>
+        ))}
+        
+        {/* Social Icons in Mobile Menu */}
+        <div className="flex items-stretch border-t-2 border-black">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center py-4 border-r border-black hover:bg-black group">
+            <SiGithub className="w-5 h-5 text-black group-hover:text-white" />
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center py-4 border-r border-black hover:bg-black group">
+            <SiLinkedin className="w-5 h-5 text-black group-hover:text-white" />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center py-4 border-r border-black hover:bg-black group">
+            <SiX className="w-5 h-5 text-black group-hover:text-white" />
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center py-4 hover:bg-black group">
+            <SiYoutube className="w-5 h-5 text-black group-hover:text-white" />
+          </a>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
