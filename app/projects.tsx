@@ -39,6 +39,24 @@ const projects: Project[] = [
     link: "https://stacko-ten.vercel.app/",
     repo: "https://github.com/workonlly/Stacko",
     status: "COMPLETED"
+  },
+  {
+    id: "PRJ-004",
+    title: "Pumpfun.Meme.coin",
+    description: "A meme coin launchpad and trading dApp on Solana, enabling users to create, launch, and trade meme tokens instantly with integrated wallet support and real-time analytics.",
+    techStack: ["Next.js", "Solana", "Web3.js", "Anchor", "Phantom", "Wagmi", "RainbowKit"],
+    link: "https://pumpfun-meme-clone.vercel.app/",
+    repo: "https://github.com/workonlly/pumpfun.meme.clone/",
+    status: "COMPLETED"
+  },
+  {
+    id: "PRJ-005",
+    title: "datacrew.ai",
+    description: "A collaborative AI data labeling and annotation platform with real-time team workflows, advanced analytics, and seamless integration for building high-quality datasets.",
+    techStack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Socket.io", "Vercel"],
+    link: "/",
+    repo: "https://github.com/workonlly/datacrew.ai",
+    status: "IN_PROGRESS"
   }
 ];
 
@@ -95,10 +113,10 @@ const ProjectCard = ({ project }: { project: Project }) => (
 
     {/* 4. Action Footer */}
     <div className="mt-auto p-4 border-t-2 border-black flex gap-4 bg-zinc-50">
-      <a href={project.repo} className="flex-1 flex items-center justify-center gap-2 py-2 border-2 border-black font-black text-[10px] hover:bg-black hover:text-white transition-all uppercase tracking-widest">
+      <a href={project.repo} target="_blank" className="flex-1 flex items-center justify-center gap-2 py-2 border-2 border-black font-black text-[10px] hover:bg-black hover:text-white transition-all uppercase tracking-widest">
         <Github size={14} /> Source
       </a>
-      <a href={project.link} className="flex-1 flex items-center justify-center gap-2 py-2 border-2 border-black bg-black text-white font-black text-[10px] hover:bg-white hover:text-black transition-all uppercase tracking-widest">
+      <a href={project.link} target="_blank" className="flex-1 flex items-center justify-center gap-2 py-2 border-2 border-black bg-black text-white font-black text-[10px] hover:bg-white hover:text-black transition-all uppercase tracking-widest">
         <ExternalLink size={14} /> Visit
       </a>
     </div>

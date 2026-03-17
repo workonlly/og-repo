@@ -83,6 +83,9 @@ export default function Skills() {
                 <div>
                   <span className="font-bold">Web3:</span> Ether.js, Hardhat, Foundry, Web3.js
                 </div>
+                <div>
+                  <span className="font-bold">Test:</span> Jest, Mocha, Selenium, Vitest, Cypress
+                </div>
               </div>
             </div>
           </div>
