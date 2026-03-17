@@ -129,7 +129,7 @@ export default function Experience() {
         </div>
         <div className="text-right font-mono text-[9px] font-bold text-zinc-400 uppercase max-w-[200px]">
           // Fetching professional_records...<br/>
-          // Timestamp: {new Date().toLocaleDateString()}<br/>
+          // Timestamp: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' })}<br/>
           // Status: Verified_Engineer
         </div>
       </div>

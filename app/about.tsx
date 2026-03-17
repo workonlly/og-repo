@@ -123,8 +123,12 @@ const SciFiContainer = ({ children }: { children: React.ReactNode }) => {
 
 
 export default function About() {
+  const date = new Date('2026-03-18');
+  const formatted = date.toLocaleDateString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' });
+  // Output: 3/18/2026
+
   return (
-    <div className=" md:min-h-screen w-full text-black p-0 md:p-12 flex flex-col items-center  font-mono">
+    <div className="  w-full text-black p-0 md:p-2 flex flex-col items-center  font-mono">
       
       <div className="w-full max-w-3xl flex flex-col gap-0 md:gap-6 z-10">
         
