@@ -124,7 +124,7 @@ const SciFiContainer = ({ children }: { children: React.ReactNode }) => {
 
 export default function About() {
   return (
-    <div className="min-h-screen w-full text-black p-0 md:p-12 flex flex-col items-center font-mono">
+    <div className=" w-full text-black p-0 md:p-12 flex flex-col items-center  font-mono">
       
       <div className="w-full max-w-3xl flex flex-col gap-0 md:gap-6 z-10">
         

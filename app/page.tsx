@@ -8,7 +8,7 @@ import CertificateSection from './certificates';
 export default function JarvisPage() {
   return (<>
 
-    <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20 min-h-screen bg-transparent overflow-hidden relative px-4 py-8 lg:py-0 max-w-full">
+    <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20 min-h-screen bg-transparent overflow-hidden relative px-4  max-w-full">
       
       <div className="z-10 ">
         <JarvisEmblem 
@@ -17,7 +17,7 @@ export default function JarvisPage() {
         />
       </div>
 
-      <div className="z-10 w-full lg:w-auto">
+      <div className="z-10 flex items-center   w-full lg:w-auto">
         <About />
       </div>
           
