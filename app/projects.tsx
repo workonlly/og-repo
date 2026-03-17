@@ -57,7 +57,8 @@ const projects: Project[] = [
     link: "/",
     repo: "https://github.com/workonlly/datacrew.ai",
     status: "IN_PROGRESS"
-  }
+  },
+
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => (
