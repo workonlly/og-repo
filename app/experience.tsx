@@ -23,7 +23,7 @@ const experiences: Experience[] = [
     id: "LOG_01",
     company: "Lacleo AI",
     role: "Full Stack AI developer",
-    period: "2023- PRESENT",
+    period: "2024- PRESENT",
     description: [
       "Developing the Lacleo AI platform focused on advanced data enrichment services, driving innovation in data processing and automation.",
       "Leveraged a diverse technology stack including Next.js for frontend, Laravel as a robust backend, AWS for scalable cloud infrastructure, Elasticsearch for high-performance search, and vector databases for AI-driven features.",
@@ -36,7 +36,7 @@ const experiences: Experience[] = [
     id: "LOG_02",
     company: "Primerole ",
     role: "Full Stack Developer",
-    period: "2023",
+    period: "2024",
     description: [
       "Developed a call enrichment software that analyzes phone recordings to assess call quality, word usage, and customer satisfaction.",
       "Integrated NLTK (Natural Language Toolkit) to perform sentiment and mood analysis, providing actionable insights for improving sales and customer experience.",
@@ -48,7 +48,7 @@ const experiences: Experience[] = [
     id: "LOG_03",
     company: "Lacleo Digital",
     role: "Junior Web developer",
-    period: "2023",
+    period: "2024",
     description: [
       "Developed custom software solutions using Flask, Selenium, Playwright, and BeautifulSoup for automation, data extraction, and web scraping tasks.",
       "Built and deployed fullstack websites with tailored features, integrating backend and frontend technologies to meet client requirements.",
