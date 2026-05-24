@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { 
   Radio, 
   Send, 
@@ -18,11 +19,24 @@ import { toast } from 'sonner';
 
 export const NoirContactSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', title: '', message: '' });
   const [isTransmitting, setIsTransmitting] = useState(false);
   const [waveformData, setWaveformData] = useState<number[]>(Array(40).fill(0.1));
   const [signalStatus, setSignalStatus] = useState<'IDLE' | 'ACTIVE' | 'SENDING'>('IDLE');
   const [uptime, setUptime] = useState("00:00:00");
+
+  const emailjsConfig = {
+    serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+    notificationTemplateId: process.env.NEXT_PUBLIC_EMAILJS_NOTIFICATION_TEMPLATE_ID,
+    autoreplyTemplateId: process.env.NEXT_PUBLIC_EMAILJS_AUTOREPLY_TEMPLATE_ID,
+    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+  };
+
+  useEffect(() => {
+    if (emailjsConfig.publicKey) {
+      emailjs.init({ publicKey: emailjsConfig.publicKey });
+    }
+  }, [emailjsConfig.publicKey]);
 
   // System Uptime Logic
   useEffect(() => {
@@ -50,15 +64,61 @@ export const NoirContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const { serviceId, notificationTemplateId, autoreplyTemplateId, publicKey } = emailjsConfig;
+
+    if (!serviceId || !notificationTemplateId || !autoreplyTemplateId || !publicKey) {
+      toast.error('EMAIL_CONFIG_MISSING', {
+        description: 'Set the EmailJS environment variables before enabling the form.',
+      });
+      return;
+    }
+
     setIsTransmitting(true);
     setSignalStatus('SENDING');
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    toast.success('DATA_UPLOAD_SUCCESS', {
-      description: 'Your transmission has been archived by the system.',
-    });
-    setFormData({ name: '', email: '', message: '' });
-    setIsTransmitting(false);
-    setSignalStatus('IDLE');
+
+    const submittedAt = new Date().toLocaleString();
+
+    try {
+      await Promise.all([
+        emailjs.send(
+          serviceId,
+          notificationTemplateId,
+          {
+            name: formData.name,
+            email: formData.email,
+            title: formData.title,
+            message: formData.message,
+            time: submittedAt,
+          },
+          { publicKey },
+        ),
+        emailjs.send(
+          serviceId,
+          autoreplyTemplateId,
+          {
+            name: formData.name,
+            email: formData.email,
+            title: formData.title,
+            message: formData.message,
+            time: submittedAt,
+          },
+          { publicKey },
+        ),
+      ]);
+
+      toast.success('DATA_UPLOAD_SUCCESS', {
+        description: 'Message sent and auto-reply delivered successfully.',
+      });
+      setFormData({ name: '', email: '', title: '', message: '' });
+    } catch (error) {
+      toast.error('TRANSMISSION_FAILED', {
+        description: 'EmailJS rejected the request. Check your service, template, and public key settings.',
+      });
+      console.error('EmailJS send failed:', error);
+    } finally {
+      setIsTransmitting(false);
+      setSignalStatus('IDLE');
+    }
   };
 
   return (
@@ -120,6 +180,17 @@ export const NoirContactSection = () => {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                      placeholder="return_path@domain.com"
+                      className="w-full bg-transparent border-b-2 border-black p-2 focus:bg-black focus:text-white outline-none transition-all placeholder:text-zinc-300 font-bold"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase opacity-50 block tracking-widest"> {'>'} title</label>
+                    <input
+                      type="text"
+                      value={formData.title}
+                      onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                       required
                       placeholder="return_path@domain.com"
                       className="w-full bg-transparent border-b-2 border-black p-2 focus:bg-black focus:text-white outline-none transition-all placeholder:text-zinc-300 font-bold"
