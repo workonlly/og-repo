@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 import Starfield from "./starfield";
 import DataRain from "./datarain";
 import SciFiNavbar from "./navbar";
@@ -32,6 +33,8 @@ export default function RootLayout({
       >
         {/* Background layers */}
         <div className="fixed inset-0 z-0">
+          <Analytics />
+
           <Starfield />
           <DataRain />
         </div>
